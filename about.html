@@ -11,31 +11,22 @@
   <div class="container">
     <header class="page-header">
       <h1>Methodology & Limitations</h1>
-      <p>This is a working map of the AI safety ecosystem. We're sharing what we can see so others can help fill in blind spots.</p>
     </header>
 
     <section>
-      <h2>What This Analysis Is</h2>
-      <ul class="methodology-list">
-        <li><strong>A proof of concept</strong> for ecosystem analysis methodology</li>
-        <li><strong>A demonstration</strong> of how gaps could be identified systematically</li>
-        <li><strong>Transparent</strong> about data limitations and sourcing</li>
-        <li><strong>An invitation to scrutiny</strong>, not a claim of authority</li>
-      </ul>
+      <h2>Purpose</h2>
+      <p>This analysis attempts to map structural gaps in the AI safety ecosystem: where organizations are concentrated, which research-to-impact pathways exist, and what commercial infrastructure is missing compared to mature fields like cybersecurity.</p>
+      <p>The goal is to surface patterns that might inform funding and strategy decisions. This is a sketch, not a census. We've prioritized breadth over depth, and transparency about uncertainty over false precision. Where we don't know something, we say so.</p>
     </section>
 
     <section>
-      <h2>What This Analysis Is Not</h2>
-      <ul class="methodology-list">
-        <li>A comprehensive, fully-verified dataset</li>
-        <li>A production-ready tool with real-time updates</li>
-        <li>The final word on anything</li>
-      </ul>
+      <h2>Limits</h2>
+      <p>Our view of the field is shaped by what's publicly visible and what our sources happen to cover. Organizations outside EA-adjacent networks are likely underrepresented. Topic categorizations reflect one analyst's judgment and haven't been validated by practitioners. Pathways between research and decisions are inferred from public relationships, not interviews.</p>
+      <p>This is a January 2026 snapshot. The field moves fast.</p>
     </section>
 
     <section>
       <h2>Data Sources</h2>
-      <p>We think even a partial map is useful. Here's what we're drawing from:</p>
 
       <table>
         <thead>
@@ -43,128 +34,105 @@
             <th>Source</th>
             <th>Data Type</th>
             <th>Records</th>
-            <th>Verification</th>
+            <th>Retrieved</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td><a href="https://sparai.org/projects/sp26/" class="source-link">SPAR SP26</a></td>
-            <td>Research projects</td>
+            <td>Research projects, mentors, topics</td>
             <td>137</td>
-            <td><span class="source-level source-level-verified">Verified</span></td>
+            <td>3 Jan 2026</td>
           </tr>
           <tr>
-            <td><a href="https://coefficientgiving.org/" class="source-link">Coefficient Giving</a></td>
-            <td>Grants, RFP areas</td>
+            <td><a href="https://coefficientgiving.org/grants/" class="source-link">Coefficient Giving</a></td>
+            <td>Grants (AI-relevant funds)</td>
             <td>~995</td>
-            <td><span class="source-level source-level-verified">Verified</span></td>
+            <td>3 Jan 2026</td>
           </tr>
           <tr>
-            <td><a href="https://www.matsprogram.org/research" class="source-link">MATS Program</a></td>
-            <td>Research streams</td>
-            <td>16</td>
-            <td><span class="source-level source-level-verified">Verified</span></td>
-          </tr>
-          <tr>
-            <td>Manual ontology</td>
-            <td>Organizations</td>
+            <td>Manual research</td>
+            <td>Organizations mapped to topics</td>
             <td>~50</td>
-            <td><span class="source-level source-level-inferred">Inferred</span></td>
+            <td>3 Jan 2026</td>
           </tr>
           <tr>
-            <td>Manual ontology</td>
+            <td>Manual research</td>
             <td>Topic taxonomy</td>
-            <td>~115</td>
-            <td><span class="source-level source-level-inferred">Inferred</span></td>
+            <td>~115 topics</td>
+            <td>3 Jan 2026</td>
           </tr>
         </tbody>
       </table>
     </section>
 
     <section>
-      <h2>Sourcing Standards</h2>
-      <p>Every data point in this analysis falls into one of three levels:</p>
+      <h2>Sourcing Levels</h2>
+      <p>We distinguish three levels of confidence:</p>
 
       <div class="card" style="margin-top: var(--space-md);">
         <div style="display: flex; align-items: flex-start; gap: var(--space-md); margin-bottom: var(--space-md);">
-          <span class="source-level source-level-verified">Verified</span>
+          <span class="source-level source-level-verified">Direct</span>
           <div>
-            <strong>Direct from source, cross-referenced</strong><br>
-            <span style="color: var(--color-muted); font-size: 0.9rem;">Data comes directly from organization websites or official databases, checked against 2+ sources where possible.</span>
+            <strong>Pulled from official source</strong><br>
+            <span style="color: var(--color-muted); font-size: 0.9rem;">Organization websites, grant databases, program pages. Retrieved directly without interpretation.</span>
           </div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: var(--space-md); margin-bottom: var(--space-md);">
           <span class="source-level source-level-inferred">Inferred</span>
           <div>
-            <strong>Single source or reasonable inference</strong><br>
-            <span style="color: var(--color-muted); font-size: 0.9rem;">Marked with ~. Based on available evidence but not independently verified. Noted as estimates.</span>
+            <strong>Reasonable interpretation of available evidence</strong><br>
+            <span style="color: var(--color-muted); font-size: 0.9rem;">Marked with ~. Single source, or required judgment to categorize. Noted as estimates.</span>
           </div>
         </div>
         <div style="display: flex; align-items: flex-start; gap: var(--space-md);">
           <span class="source-level source-level-illustrative">Illustrative</span>
           <div>
-            <strong>Placeholder for demonstration</strong><br>
-            <span style="color: var(--color-muted); font-size: 0.9rem;">Marked with *. Shows methodology structure but should not be cited as fact.</span>
+            <strong>Placeholder to show structure</strong><br>
+            <span style="color: var(--color-muted); font-size: 0.9rem;">Marked with *. Demonstrates methodology but shouldn't be cited as fact.</span>
           </div>
         </div>
       </div>
     </section>
 
     <section>
-      <h2>Key Limitations</h2>
-
-      <div class="gap-callout">
-        <h3>Selection Bias</h3>
-        <p style="margin-bottom: 0;">Our sources may over-represent certain types of organizations. Funders we track may not represent all AI safety funding. We're likely missing orgs that don't appear in EA-adjacent spaces.</p>
-      </div>
-
-      <div class="gap-callout">
-        <h3>Topic Categorization</h3>
-        <p style="margin-bottom: 0;">Mapping organizations to topics is judgment-based. Different analysts might categorize differently. We haven't validated these mappings with practitioners.</p>
-      </div>
-
-      <div class="gap-callout">
-        <h3>Pathway Inference</h3>
-        <p style="margin-bottom: 0;">We infer how research reaches decisions without interviewing the people involved. Actual influence pathways may differ significantly from what public sources suggest.</p>
-      </div>
-
-      <div class="gap-callout">
-        <h3>Point-in-Time Snapshot</h3>
-        <p style="margin-bottom: 0;">This data reflects January 2026. The field changes rapidly. Orgs launch, pivot, or shut down. Grant priorities shift.</p>
-      </div>
-    </section>
-
-    <section>
       <h2>Future Work</h2>
-      <p>To make this analysis more useful, we'd need:</p>
+      <p>Improvements that would make this analysis more useful, organized by what they'd accomplish:</p>
 
-      <h3 style="margin-top: var(--space-lg);">Moderate effort</h3>
+      <h3 style="margin-top: var(--space-lg);">Increase accuracy in gap areas</h3>
+      <p style="color: var(--color-text-light); font-size: 0.95rem;">The apparent gaps (incident response, liability, post-deployment monitoring) may reflect our limited visibility rather than true absence. Priority work:</p>
       <ul class="methodology-list">
-        <li>Track where SPAR/MATS alumni end up (pipeline flow)</li>
-        <li>Cross-reference with 80,000 Hours job board</li>
-        <li>Add employee counts from team pages (~60 pages, 2-3 hours)</li>
+        <li>Systematic search for organizations in apparent gap areas, including outside EA-adjacent networks</li>
+        <li>Verify whether "zero coverage" areas have emerging or informal work we've missed</li>
       </ul>
 
-      <h3 style="margin-top: var(--space-lg);">Significant effort</h3>
+      <h3 style="margin-top: var(--space-lg);">Quantify resource allocation</h3>
+      <p style="color: var(--color-text-light); font-size: 0.95rem;">Organization counts don't capture capacity. A 200-person lab and a 3-person nonprofit both count as "1 org."</p>
       <ul class="methodology-list">
-        <li>Verify org-topic mappings with practitioners</li>
-        <li>Track funding amounts over time</li>
-        <li>Historical SPAR/MATS cohorts (SP25, SP24)</li>
+        <li>Employee counts per organization (from team pages)</li>
+        <li>Funding per topic area (from grant data already collected)</li>
+        <li>Track how resources flow to apparent gap areas vs. crowded areas</li>
       </ul>
 
-      <h3 style="margin-top: var(--space-lg);">Would change the picture</h3>
+      <h3 style="margin-top: var(--space-lg);">Validate key pathways</h3>
+      <p style="color: var(--color-text-light); font-size: 0.95rem;">The pathway analysis is inference. Actual influence flows require talking to people.</p>
       <ul class="methodology-list">
-        <li>Interview 20-30 practitioners on actual pathways (~30 hours)</li>
-        <li>Survey enterprise buyers on AI safety needs</li>
-        <li>Map informal networks and advisory relationships</li>
+        <li>Interviews with practitioners on 3-5 crucial pathways (e.g., evaluations to deployment decisions)</li>
+        <li>Identify which pathways have highest expected impact if strengthened</li>
       </ul>
 
-      <p style="margin-top: var(--space-lg);"><strong>If you can help with any of these</strong>, or know someone who can, we'd welcome the collaboration.</p>
+      <h3 style="margin-top: var(--space-lg);">Estimate impact magnitude</h3>
+      <p style="color: var(--color-text-light); font-size: 0.95rem;">Not all gaps matter equally. Some areas may be small by design; others may represent large missed opportunities.</p>
+      <ul class="methodology-list">
+        <li>Expert estimates on importance of gap areas</li>
+        <li>Assessment of which pathways, if working, would most reduce risk</li>
+        <li>Comparison of resource allocation to rough importance rankings</li>
+      </ul>
     </section>
 
     <section>
-      <h2>Contact & Corrections</h2>
-      <p>If you see something we've missed, or know why an apparent gap isn't actually a problem, that would genuinely help improve this.</p>
+      <h2>Corrections</h2>
+      <p>If you see something wrong or missing, especially in the apparent gap areas, we'd like to know.</p>
       <p><a href="https://github.com/GriffonCode/ai-safety-gaps-mockup-demo/issues" class="source-link">Submit a correction on GitHub</a></p>
     </section>
 
