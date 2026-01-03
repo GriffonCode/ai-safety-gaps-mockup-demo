@@ -1,0 +1,186 @@
+{
+  "meta": {
+    "schema_version": "1.0",
+    "last_updated": "2026-01-03",
+    "description": "Source metadata for AI Safety Gaps analysis"
+  },
+  "sources": [
+    {
+      "id": "spar-sp26",
+      "name": "SPAR SP26 Projects",
+      "url": "https://sparai.org/projects/sp26/",
+      "type": "program",
+      "records": 137,
+      "data_types": ["projects", "researchers", "topics"],
+      "fetch_date": "2026-01-03",
+      "verification_level": "verified",
+      "notes": "All 137 Spring 2026 projects with full descriptions",
+      "local_file": "spar_sp26_projects.csv",
+      "attribution": "SPAR (Supervised Program for Alignment Research), SP26 cohort"
+    },
+    {
+      "id": "coefficient-funds",
+      "name": "Coefficient Giving Funds",
+      "url": "https://coefficientgiving.org/funds/",
+      "type": "funder",
+      "records": 13,
+      "data_types": ["funds", "rfp_areas"],
+      "fetch_date": "2026-01-03",
+      "verification_level": "verified",
+      "notes": "All 13 funds checked; 4 AI-relevant (Navigating Transformative AI, GCR, Biosecurity, Forecasting)",
+      "local_file": "coefficient_funds.csv",
+      "attribution": "Coefficient Giving (formerly Open Philanthropy)"
+    },
+    {
+      "id": "coefficient-grants-ai",
+      "name": "Coefficient Grants - Navigating Transformative AI",
+      "url": "https://coefficientgiving.org/grants/?focus-area=navigating-transformative-ai",
+      "type": "grants",
+      "records": 517,
+      "data_types": ["grants", "recipients", "amounts"],
+      "fetch_date": "2026-01-03",
+      "verification_level": "verified",
+      "notes": "450 grants with amounts, $677M total",
+      "local_file": "coefficient_grants_navigating-transformative-ai.csv",
+      "attribution": "Coefficient Giving Grants Database"
+    },
+    {
+      "id": "coefficient-grants-gcr",
+      "name": "Coefficient Grants - Global Catastrophic Risks",
+      "url": "https://coefficientgiving.org/grants/?focus-area=global-catastrophic-risks-opportunities",
+      "type": "grants",
+      "records": 304,
+      "data_types": ["grants", "recipients"],
+      "fetch_date": "2026-01-03",
+      "verification_level": "verified",
+      "local_file": "coefficient_grants_global-catastrophic-risks-opportunities.csv",
+      "attribution": "Coefficient Giving Grants Database"
+    },
+    {
+      "id": "coefficient-grants-bio",
+      "name": "Coefficient Grants - Biosecurity",
+      "url": "https://coefficientgiving.org/grants/?focus-area=biosecurity-pandemic-preparedness",
+      "type": "grants",
+      "records": 138,
+      "data_types": ["grants", "recipients"],
+      "fetch_date": "2026-01-03",
+      "verification_level": "verified",
+      "local_file": "coefficient_grants_biosecurity-pandemic-preparedness.csv",
+      "attribution": "Coefficient Giving Grants Database"
+    },
+    {
+      "id": "coefficient-grants-forecasting",
+      "name": "Coefficient Grants - Forecasting",
+      "url": "https://coefficientgiving.org/grants/?focus-area=forecasting",
+      "type": "grants",
+      "records": 36,
+      "data_types": ["grants", "recipients"],
+      "fetch_date": "2026-01-03",
+      "verification_level": "verified",
+      "local_file": "coefficient_grants_forecasting.csv",
+      "attribution": "Coefficient Giving Grants Database"
+    },
+    {
+      "id": "mats-research",
+      "name": "MATS Research Streams",
+      "url": "https://www.matsprogram.org/research",
+      "type": "program",
+      "records": 16,
+      "data_types": ["streams", "mentors", "publications"],
+      "fetch_date": "2026-01-03",
+      "verification_level": "verified",
+      "notes": "All major research categories; 6 featured publications (2023-2025)",
+      "local_file": "mats_research_streams.csv",
+      "attribution": "MATS (ML Alignment Theory Scholars) Program"
+    },
+    {
+      "id": "ontology-orgs-v1",
+      "name": "Organization Mapping v1",
+      "url": null,
+      "type": "manual",
+      "records": 28,
+      "data_types": ["organizations", "topics"],
+      "fetch_date": "2026-01-03",
+      "verification_level": "inferred",
+      "notes": "Manual entry based on public information",
+      "local_file": "ai_safety_ontology - Organizations (1).csv",
+      "attribution": "Manual research, author judgment"
+    },
+    {
+      "id": "ontology-orgs-v2",
+      "name": "Organization Mapping v2",
+      "url": null,
+      "type": "manual",
+      "records": 24,
+      "data_types": ["organizations"],
+      "fetch_date": "2026-01-03",
+      "verification_level": "inferred",
+      "local_file": "ai_safety_ontology_v2 - Organizations.csv",
+      "attribution": "Manual research, author judgment"
+    },
+    {
+      "id": "ontology-topics",
+      "name": "Topic Taxonomy",
+      "url": null,
+      "type": "manual",
+      "records": 115,
+      "data_types": ["topics", "categories"],
+      "fetch_date": "2026-01-03",
+      "verification_level": "inferred",
+      "notes": "115 topics mapped across 5 domains",
+      "local_file": "ai_safety_ontology - Topic Taxonomy (1).csv",
+      "attribution": "Author ontology, not externally validated"
+    },
+    {
+      "id": "ontology-dimensions",
+      "name": "Domain x Layer Grid",
+      "url": null,
+      "type": "manual",
+      "records": null,
+      "data_types": ["dimensions", "layers"],
+      "fetch_date": "2026-01-03",
+      "verification_level": "inferred",
+      "local_file": "ai_safety_ontology_v2 - Domain×Layer Grid (1).csv",
+      "attribution": "Author framework"
+    },
+    {
+      "id": "aisafety-map",
+      "name": "AISafety.com Field Map Categories",
+      "url": "https://aisafety.com/",
+      "type": "aggregator",
+      "records": 17,
+      "data_types": ["categories"],
+      "fetch_date": "2026-01-03",
+      "verification_level": "inferred",
+      "notes": "Category structure from AISafety.com field map",
+      "local_file": "ai_safety_ontology - AISafety Map Categories.csv",
+      "attribution": "AISafety.com"
+    }
+  ],
+  "verification_levels": {
+    "verified": {
+      "label": "Verified",
+      "description": "Direct from official source, cross-referenced where possible",
+      "css_class": "source-level-verified"
+    },
+    "inferred": {
+      "label": "Inferred",
+      "description": "Single source or reasonable inference, noted as estimate",
+      "css_class": "source-level-inferred",
+      "marker": "~"
+    },
+    "illustrative": {
+      "label": "Illustrative",
+      "description": "Placeholder for demonstration, not to be cited",
+      "css_class": "source-level-illustrative",
+      "marker": "*"
+    }
+  },
+  "totals": {
+    "grants": 995,
+    "projects": 137,
+    "organizations": 52,
+    "topics": 115,
+    "research_streams": 16
+  }
+}

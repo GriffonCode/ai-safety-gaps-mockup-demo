@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Methodology | AI Safety Gaps</title>
+  <link rel="stylesheet" href="shared/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="page-header">
+      <h1>Methodology & Limitations</h1>
+      <p>This is a working map of the AI safety ecosystem. We're sharing what we can see so others can help fill in blind spots.</p>
+    </header>
+
+    <section>
+      <h2>What This Analysis Is</h2>
+      <ul class="methodology-list">
+        <li><strong>A proof of concept</strong> for ecosystem analysis methodology</li>
+        <li><strong>A demonstration</strong> of how gaps could be identified systematically</li>
+        <li><strong>Transparent</strong> about data limitations and sourcing</li>
+        <li><strong>An invitation to scrutiny</strong>, not a claim of authority</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>What This Analysis Is Not</h2>
+      <ul class="methodology-list">
+        <li>A comprehensive, fully-verified dataset</li>
+        <li>A production-ready tool with real-time updates</li>
+        <li>The final word on anything</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Data Sources</h2>
+      <p>We think even a partial map is useful. Here's what we're drawing from:</p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Source</th>
+            <th>Data Type</th>
+            <th>Records</th>
+            <th>Verification</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><a href="https://sparai.org/projects/sp26/" class="source-link">SPAR SP26</a></td>
+            <td>Research projects</td>
+            <td>137</td>
+            <td><span class="source-level source-level-verified">Verified</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://coefficientgiving.org/" class="source-link">Coefficient Giving</a></td>
+            <td>Grants, RFP areas</td>
+            <td>~995</td>
+            <td><span class="source-level source-level-verified">Verified</span></td>
+          </tr>
+          <tr>
+            <td><a href="https://www.matsprogram.org/research" class="source-link">MATS Program</a></td>
+            <td>Research streams</td>
+            <td>16</td>
+            <td><span class="source-level source-level-verified">Verified</span></td>
+          </tr>
+          <tr>
+            <td>Manual ontology</td>
+            <td>Organizations</td>
+            <td>~50</td>
+            <td><span class="source-level source-level-inferred">Inferred</span></td>
+          </tr>
+          <tr>
+            <td>Manual ontology</td>
+            <td>Topic taxonomy</td>
+            <td>~115</td>
+            <td><span class="source-level source-level-inferred">Inferred</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+      <h2>Sourcing Standards</h2>
+      <p>Every data point in this analysis falls into one of three levels:</p>
+
+      <div class="card" style="margin-top: var(--space-md);">
+        <div style="display: flex; align-items: flex-start; gap: var(--space-md); margin-bottom: var(--space-md);">
+          <span class="source-level source-level-verified">Verified</span>
+          <div>
+            <strong>Direct from source, cross-referenced</strong><br>
+            <span style="color: var(--color-muted); font-size: 0.9rem;">Data comes directly from organization websites or official databases, checked against 2+ sources where possible.</span>
+          </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: var(--space-md); margin-bottom: var(--space-md);">
+          <span class="source-level source-level-inferred">Inferred</span>
+          <div>
+            <strong>Single source or reasonable inference</strong><br>
+            <span style="color: var(--color-muted); font-size: 0.9rem;">Marked with ~. Based on available evidence but not independently verified. Noted as estimates.</span>
+          </div>
+        </div>
+        <div style="display: flex; align-items: flex-start; gap: var(--space-md);">
+          <span class="source-level source-level-illustrative">Illustrative</span>
+          <div>
+            <strong>Placeholder for demonstration</strong><br>
+            <span style="color: var(--color-muted); font-size: 0.9rem;">Marked with *. Shows methodology structure but should not be cited as fact.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Key Limitations</h2>
+
+      <div class="gap-callout">
+        <h3>Selection Bias</h3>
+        <p style="margin-bottom: 0;">Our sources may over-represent certain types of organizations. Funders we track may not represent all AI safety funding. We're likely missing orgs that don't appear in EA-adjacent spaces.</p>
+      </div>
+
+      <div class="gap-callout">
+        <h3>Topic Categorization</h3>
+        <p style="margin-bottom: 0;">Mapping organizations to topics is judgment-based. Different analysts might categorize differently. We haven't validated these mappings with practitioners.</p>
+      </div>
+
+      <div class="gap-callout">
+        <h3>Pathway Inference</h3>
+        <p style="margin-bottom: 0;">We infer how research reaches decisions without interviewing the people involved. Actual influence pathways may differ significantly from what public sources suggest.</p>
+      </div>
+
+      <div class="gap-callout">
+        <h3>Point-in-Time Snapshot</h3>
+        <p style="margin-bottom: 0;">This data reflects January 2026. The field changes rapidly. Orgs launch, pivot, or shut down. Grant priorities shift.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Future Work</h2>
+      <p>To make this analysis more useful, we'd need:</p>
+
+      <h3 style="margin-top: var(--space-lg);">Moderate effort</h3>
+      <ul class="methodology-list">
+        <li>Track where SPAR/MATS alumni end up (pipeline flow)</li>
+        <li>Cross-reference with 80,000 Hours job board</li>
+        <li>Add employee counts from team pages (~60 pages, 2-3 hours)</li>
+      </ul>
+
+      <h3 style="margin-top: var(--space-lg);">Significant effort</h3>
+      <ul class="methodology-list">
+        <li>Verify org-topic mappings with practitioners</li>
+        <li>Track funding amounts over time</li>
+        <li>Historical SPAR/MATS cohorts (SP25, SP24)</li>
+      </ul>
+
+      <h3 style="margin-top: var(--space-lg);">Would change the picture</h3>
+      <ul class="methodology-list">
+        <li>Interview 20-30 practitioners on actual pathways (~30 hours)</li>
+        <li>Survey enterprise buyers on AI safety needs</li>
+        <li>Map informal networks and advisory relationships</li>
+      </ul>
+
+      <p style="margin-top: var(--space-lg);"><strong>If you can help with any of these</strong>, or know someone who can, we'd welcome the collaboration.</p>
+    </section>
+
+    <section>
+      <h2>Contact & Corrections</h2>
+      <p>If you see something we've missed, or know why an apparent gap isn't actually a problem, that would genuinely help improve this.</p>
+      <p><a href="https://github.com/GriffonCode/ai-safety-gaps-mockup-demo/issues" class="source-link">Submit a correction on GitHub</a></p>
+    </section>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="gap1-coverage/index.html">Gap 1: Coverage</a>
+      <a href="gap2-pathways/index.html">Gap 2: Pathways</a>
+      <a href="gap3-corporate/index.html">Gap 3: Commercial</a>
+    </nav>
+
+    <footer>
+      <p>Data collected January 2026 | <a href="https://github.com/GriffonCode/ai-safety-gaps-mockup-demo">View source</a></p>
+    </footer>
+  </div>
+
+  <style>
+    .methodology-list {
+      margin-left: 1.5rem;
+      color: var(--color-text-light);
+      margin-bottom: var(--space-md);
+    }
+    .methodology-list li {
+      margin-bottom: var(--space-sm);
+    }
+  </style>
+</body>
+</html>
