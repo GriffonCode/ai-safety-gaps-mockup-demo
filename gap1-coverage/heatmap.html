@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Gap 1: Domain x Layer Heatmap | AI Safety Gaps</title>
+  <link rel="stylesheet" href="../shared/style.css">
+  <style>
+    /* Heatmap specific styles */
+    .heatmap-grid {
+      display: grid;
+      grid-template-columns: 120px repeat(5, 1fr);
+      gap: 3px;
+      margin: var(--space-lg) 0;
+    }
+
+    .heatmap-corner {
+      background: transparent;
+    }
+
+    .heatmap-col-header {
+      padding: var(--space-sm);
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.75rem;
+      color: var(--color-primary);
+      background: var(--color-surface);
+      border-radius: 4px;
+    }
+
+    .heatmap-row-header {
+      padding: var(--space-sm);
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--color-text);
+      background: var(--color-surface);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+    }
+
+    .heatmap-cell {
+      padding: var(--space-sm);
+      text-align: center;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+      min-height: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .heatmap-cell:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      z-index: 10;
+      position: relative;
+    }
+
+    .heatmap-count {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .heatmap-label {
+      font-size: 0.7rem;
+      opacity: 0.8;
+      line-height: 1.2;
+    }
+
+    /* Coverage levels */
+    .coverage-high {
+      background: #9ae6b4;
+      color: #22543d;
+    }
+
+    .coverage-medium {
+      background: #faf089;
+      color: #744210;
+    }
+
+    .coverage-low {
+      background: #fed7d7;
+      color: #822727;
+    }
+
+    .coverage-none {
+      background: #e2e8f0;
+      color: #718096;
+    }
+
+    /* Cell expanded details */
+    .heatmap-cell-details {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      border: 1px solid var(--color-border);
+      border-radius: 8px;
+      padding: var(--space-md);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      min-width: 200px;
+      z-index: 100;
+      text-align: left;
+    }
+
+    .heatmap-cell:hover .heatmap-cell-details {
+      display: block;
+    }
+
+    .cell-topics {
+      font-size: 0.8rem;
+      color: var(--color-text-light);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .cell-topics li {
+      padding: 2px 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .cell-topics li:last-child {
+      border-bottom: none;
+    }
+
+    @media (max-width: 700px) {
+      .heatmap-grid {
+        grid-template-columns: 80px repeat(5, 1fr);
+      }
+
+      .heatmap-col-header {
+        font-size: 0.65rem;
+        padding: var(--space-xs);
+      }
+
+      .heatmap-cell {
+        min-height: 60px;
+        padding: var(--space-xs);
+      }
+
+      .heatmap-count {
+        font-size: 1.1rem;
+      }
+
+      .heatmap-label {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="page-header">
+      <h1>Gap 1: Coverage by Domain & Layer</h1>
+      <p>Where does AI safety work concentrate across the defense lifecycle? Which cells show gaps?</p>
+    </header>
+
+    <!-- View Tabs -->
+    <div class="view-tabs">
+      <a href="enhanced.html" class="view-tab">Bar Chart</a>
+      <a href="heatmap.html" class="view-tab active">Heatmap</a>
+      <a href="index.html" class="view-tab">Original</a>
+    </div>
+
+    <section>
+      <h2>Domain x Defense Layer Matrix</h2>
+      <p>Organization coverage mapped to a 2x5 grid of domains (Technical, Governance) and defense layers (Prevent through Adapt).<sup>1</sup></p>
+
+      <!-- Heatmap Grid -->
+      <div class="heatmap-grid">
+        <!-- Header row -->
+        <div class="heatmap-corner"></div>
+        <div class="heatmap-col-header">Prevent</div>
+        <div class="heatmap-col-header">Detect</div>
+        <div class="heatmap-col-header">Control</div>
+        <div class="heatmap-col-header">Withstand</div>
+        <div class="heatmap-col-header">Adapt & Thrive</div>
+
+        <!-- Technical row -->
+        <div class="heatmap-row-header">Technical</div>
+
+        <div class="heatmap-cell coverage-medium" style="position: relative;">
+          <span class="heatmap-count">~4</span>
+          <span class="heatmap-label">orgs</span>
+          <div class="heatmap-cell-details">
+            <strong>Technical / Prevent</strong>
+            <ul class="cell-topics">
+              <li>Safe Architecture Design</li>
+              <li>Training Data Curation</li>
+              <li>Robust Unlearning</li>
+            </ul>
+            <p style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--color-muted);">
+              Orgs: Anthropic, DeepMind (partial)
+            </p>
+          </div>
+        </div>
+
+        <div class="heatmap-cell coverage-high" style="position: relative;">
+          <span class="heatmap-count">~10</span>
+          <span class="heatmap-label">orgs</span>
+          <div class="heatmap-cell-details">
+            <strong>Technical / Detect</strong>
+            <ul class="cell-topics">
+              <li>Capability Evaluations</li>
+              <li>Dangerous Capability Evals</li>
+              <li>Safety Benchmarks</li>
+              <li>Interpretability</li>
+              <li>Mechanistic Interp</li>
+            </ul>
+            <p style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--color-muted);">
+              Orgs: METR, Apollo, ARC, Anthropic, UK AISI...
+            </p>
+          </div>
+        </div>
+
+        <div class="heatmap-cell coverage-high" style="position: relative;">
+          <span class="heatmap-count">~12</span>
+          <span class="heatmap-label">orgs</span>
+          <div class="heatmap-cell-details">
+            <strong>Technical / Control</strong>
+            <ul class="cell-topics">
+              <li>Interpretability</li>
+              <li>Activation Monitoring</li>
+              <li>Alignment / RLHF</li>
+              <li>Constitutional AI</li>
+            </ul>
+            <p style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--color-muted);">
+              Orgs: Anthropic, OpenAI, DeepMind, MIRI, CHAI...
+            </p>
+          </div>
+        </div>
+
+        <div class="heatmap-cell coverage-medium" style="position: relative;">
+          <span class="heatmap-count">~5</span>
+          <span class="heatmap-label">orgs</span>
+          <div class="heatmap-cell-details">
+            <strong>Technical / Withstand</strong>
+            <ul class="cell-topics">
+              <li>Robustness</li>
+              <li>Adversarial Robustness</li>
+              <li>Jailbreak Resistance</li>
+              <li>Backdoor Detection</li>
+              <li>Red Teaming</li>
+            </ul>
+            <p style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--color-muted);">
+              Orgs: Apart Research, labs (internal)
+            </p>
+          </div>
+        </div>
+
+        <div class="heatmap-cell coverage-none" style="position: relative;">
+          <span class="heatmap-count">?</span>
+          <span class="heatmap-label">unclear</span>
+          <div class="heatmap-cell-details">
+            <strong>Technical / Adapt & Thrive</strong>
+            <p style="font-size: 0.8rem; color: var(--color-muted);">
+              This cell represents technical approaches to thriving in an AGI world.
+              No clear organizational focus identified.
+            </p>
+          </div>
+        </div>
+
+        <!-- Governance row -->
+        <div class="heatmap-row-header">Governance</div>
+
+        <div class="heatmap-cell coverage-medium" style="position: relative;">
+          <span class="heatmap-count">~4</span>
+          <span class="heatmap-label">orgs</span>
+          <div class="heatmap-cell-details">
+            <strong>Governance / Prevent</strong>
+            <ul class="cell-topics">
+              <li>Pre-deployment Requirements</li>
+              <li>Responsible Scaling Policies</li>
+              <li>Compute Governance</li>
+              <li>Export Controls</li>
+              <li>International Coordination</li>
+            </ul>
+            <p style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--color-muted);">
+              Orgs: GovAI, CSET, CAIS
+            </p>
+          </div>
+        </div>
+
+        <div class="heatmap-cell coverage-medium" style="position: relative;">
+          <span class="heatmap-count">~3</span>
+          <span class="heatmap-label">orgs</span>
+          <div class="heatmap-cell-details">
+            <strong>Governance / Detect</strong>
+            <ul class="cell-topics">
+              <li>Threat Modeling</li>
+              <li>AI Timelines Research</li>
+              <li>Risk Assessment</li>
+              <li>Audit Requirements</li>
+              <li>Whistleblower Protection</li>
+            </ul>
+            <p style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--color-muted);">
+              Orgs: GovAI, forecasting groups
+            </p>
+          </div>
+        </div>
+
+        <div class="heatmap-cell coverage-medium" style="position: relative;">
+          <span class="heatmap-count">~4</span>
+          <span class="heatmap-label">orgs</span>
+          <div class="heatmap-cell-details">
+            <strong>Governance / Control</strong>
+            <ul class="cell-topics">
+              <li>AI Regulation</li>
+              <li>Safety Standards</li>
+              <li>Deployment Restrictions</li>
+              <li>Corporate Governance</li>
+              <li>Safety Culture</li>
+            </ul>
+            <p style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--color-muted);">
+              Orgs: UK AISI, US AISI, PAI
+            </p>
+          </div>
+        </div>
+
+        <div class="heatmap-cell coverage-low" style="position: relative;">
+          <span class="heatmap-count">~0</span>
+          <span class="heatmap-label">GAP</span>
+          <div class="heatmap-cell-details">
+            <strong>Governance / Withstand</strong>
+            <ul class="cell-topics">
+              <li>Incident Response</li>
+              <li>Kill Switches</li>
+            </ul>
+            <p style="font-size: 0.8rem; color: var(--color-accent); margin-top: 0.5rem;">
+              <strong>Gap identified:</strong> No organizations focus primarily on AI incident response governance.
+            </p>
+          </div>
+        </div>
+
+        <div class="heatmap-cell coverage-low" style="position: relative;">
+          <span class="heatmap-count">~1</span>
+          <span class="heatmap-label">orgs</span>
+          <div class="heatmap-cell-details">
+            <strong>Governance / Adapt & Thrive</strong>
+            <ul class="cell-topics">
+              <li>Economic policy reform</li>
+              <li>Governance innovation</li>
+              <li>Redefining human purpose</li>
+            </ul>
+            <p style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--color-muted);">
+              FLI touches on these themes. Mostly philosophical.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Heatmap legend -->
+      <div class="heatmap-legend">
+        <span>Coverage:</span>
+        <div class="heatmap-legend-scale">
+          <div class="heatmap-legend-cell" style="background: #fed7d7;" title="0-1 orgs"></div>
+          <div class="heatmap-legend-cell" style="background: #faf089;" title="2-4 orgs"></div>
+          <div class="heatmap-legend-cell" style="background: #9ae6b4;" title="5+ orgs"></div>
+        </div>
+        <span>0-1</span>
+        <span>2-4</span>
+        <span>5+</span>
+        <span style="margin-left: 1rem; color: var(--color-muted);">Hover cells for details</span>
+      </div>
+    </section>
+
+    <div class="gap-callout">
+      <h3>Key Insight: Right-Side Gap</h3>
+      <p>The right side of the matrix (Withstand, Adapt & Thrive) shows sparse coverage. The field concentrates on <em>preventing</em> and <em>controlling</em> AI risks, but has underinvested in <em>responding</em> when things go wrong and <em>adapting</em> to a world with powerful AI.</p>
+      <p style="font-size: 0.9rem; margin-top: 0.5rem;"><em>This echoes cybersecurity's evolution: early focus was on prevention, with incident response and resilience emerging later.</em></p>
+    </div>
+
+    <section>
+      <h2>Reading This Heatmap</h2>
+
+      <h3>Columns (Defense Layers)</h3>
+      <table>
+        <tr><th>Layer</th><th>Question</th></tr>
+        <tr><td>Prevent</td><td>How do we stop bad AI from being created?</td></tr>
+        <tr><td>Detect</td><td>How do we find problems before deployment?</td></tr>
+        <tr><td>Control</td><td>How do we constrain deployed AI behavior?</td></tr>
+        <tr><td>Withstand</td><td>How do we survive when things go wrong?</td></tr>
+        <tr><td>Adapt & Thrive</td><td>How do we flourish in an AI world?</td></tr>
+      </table>
+
+      <h3>Rows (Domains)</h3>
+      <table>
+        <tr><th>Domain</th><th>Approach</th></tr>
+        <tr><td>Technical</td><td>Engineering solutions, algorithms, architectures</td></tr>
+        <tr><td>Governance</td><td>Policy, regulation, institutions, standards</td></tr>
+      </table>
+    </section>
+
+    <!-- Source Panel -->
+    <details class="source-panel">
+      <summary>Data Sources (2)</summary>
+      <div class="source-panel-content">
+        <ul class="source-list">
+          <li class="source-item">
+            <span class="source-level source-level-inferred">Inferred</span>
+            <div class="source-details">
+              <div class="source-name">AI Safety Ontology v2 - Domain x Layer Grid</div>
+              <div class="source-meta">
+                2 domains x 5 layers |
+                Manual categorization |
+                Updated: 2026-01-03
+              </div>
+            </div>
+          </li>
+          <li class="source-item">
+            <span class="source-level source-level-illustrative">Illustrative</span>
+            <div class="source-details">
+              <div class="source-name">Organization-to-Cell Mappings</div>
+              <div class="source-meta">
+                Author judgment |
+                Organizations may span multiple cells
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="source-panel-footer">
+          <a href="#" class="source-action">Suggest correction</a>
+          <a href="#" class="source-action">View raw data (CSV)</a>
+        </div>
+      </div>
+    </details>
+
+    <!-- Footnotes -->
+    <section style="margin-top: var(--space-xl); padding-top: var(--space-md); border-top: 1px solid var(--color-border);">
+      <p style="font-size: 0.85rem; color: var(--color-muted);">
+        <sup>1</sup> Cell counts are approximate. Organizations often work across multiple cells. Mapping is based on primary stated focus, not comprehensive activity analysis.
+      </p>
+    </section>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="enhanced.html">Bar Chart View</a>
+      <a href="../gap2-pathways/index.html">Gap 2: Impact Pathways</a>
+      <a href="../gap3-corporate/index.html">Gap 3: Commercial Infrastructure</a>
+    </nav>
+
+    <footer>
+      <p>Data sources: AI Safety Ontology v2 | January 2026</p>
+    </footer>
+  </div>
+</body>
+</html>

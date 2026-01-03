@@ -310,7 +310,295 @@ footer {
   margin-top: var(--space-2xl);
 }
 
-/* Responsive */
+/* ===================================
+   SOURCE PANEL COMPONENT
+   =================================== */
+.source-panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  margin: var(--space-lg) 0;
+}
+
+.source-panel summary {
+  padding: var(--space-md) var(--space-lg);
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.source-panel summary:hover {
+  background: var(--color-bg);
+}
+
+.source-panel summary::marker {
+  content: '';
+}
+
+.source-panel summary::before {
+  content: '+';
+  display: inline-block;
+  width: 1.2em;
+  font-weight: bold;
+}
+
+.source-panel[open] summary::before {
+  content: '-';
+}
+
+.source-panel-content {
+  padding: 0 var(--space-lg) var(--space-lg);
+  border-top: 1px solid var(--color-border);
+}
+
+.source-list {
+  list-style: none;
+  margin: var(--space-md) 0 0 0;
+  padding: 0;
+}
+
+.source-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.source-item:last-child {
+  border-bottom: none;
+}
+
+.source-level {
+  flex-shrink: 0;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.source-level-verified {
+  background: #c6f6d5;
+  color: #22543d;
+}
+
+.source-level-inferred {
+  background: #fefcbf;
+  color: #744210;
+}
+
+.source-level-illustrative {
+  background: #e2e8f0;
+  color: #4a5568;
+}
+
+.source-details {
+  flex: 1;
+}
+
+.source-name {
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 2px;
+}
+
+.source-meta {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.source-link {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.source-link:hover {
+  text-decoration: underline;
+}
+
+.source-panel-footer {
+  margin-top: var(--space-md);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  gap: var(--space-md);
+  font-size: 0.85rem;
+}
+
+.source-action {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.source-action:hover {
+  text-decoration: underline;
+}
+
+.source-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  font-size: 0.8rem;
+  color: var(--color-muted);
+  margin-top: var(--space-sm);
+}
+
+.source-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ===================================
+   VIEW TABS
+   =================================== */
+.view-tabs {
+  display: flex;
+  gap: 2px;
+  margin-bottom: var(--space-lg);
+  background: var(--color-border);
+  border-radius: 8px;
+  padding: 2px;
+}
+
+.view-tab {
+  flex: 1;
+  padding: var(--space-sm) var(--space-md);
+  text-align: center;
+  text-decoration: none;
+  color: var(--color-text-light);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.view-tab:hover {
+  background: rgba(255,255,255,0.5);
+}
+
+.view-tab.active {
+  background: var(--color-surface);
+  color: var(--color-primary);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* ===================================
+   ENHANCED BAR CHART
+   =================================== */
+.bar-row-clickable {
+  cursor: pointer;
+  transition: background 0.2s;
+  padding: var(--space-xs) var(--space-sm);
+  margin: 0 calc(-1 * var(--space-sm));
+  border-radius: 4px;
+}
+
+.bar-row-clickable:hover {
+  background: var(--color-bg);
+}
+
+.bar-row-clickable summary {
+  list-style: none;
+}
+
+.bar-row-clickable summary::-webkit-details-marker {
+  display: none;
+}
+
+.bar-details {
+  margin-left: 200px;
+  margin-top: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  background: var(--color-bg);
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.bar-details-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs) var(--space-md);
+}
+
+.bar-details-list li {
+  color: var(--color-text-light);
+}
+
+.bar-sort-controls {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+  font-size: 0.85rem;
+  align-items: center;
+}
+
+.bar-sort-btn {
+  padding: 4px 8px;
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  background: white;
+  color: var(--color-text-light);
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.bar-sort-btn:hover {
+  background: var(--color-bg);
+}
+
+.bar-sort-btn.active {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+/* Coverage level colors */
+.bar-fill.coverage-high {
+  background: var(--color-success);
+}
+
+.bar-fill.coverage-medium {
+  background: var(--color-warning);
+}
+
+.bar-fill.coverage-low {
+  background: var(--color-accent);
+}
+
+/* ===================================
+   HEATMAP LEGEND
+   =================================== */
+.heatmap-legend {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.heatmap-legend-scale {
+  display: flex;
+  gap: 2px;
+}
+
+.heatmap-legend-cell {
+  width: 24px;
+  height: 16px;
+  border-radius: 2px;
+}
+
+/* ===================================
+   RESPONSIVE
+   =================================== */
 @media (max-width: 600px) {
   .container {
     padding: var(--space-md);
@@ -335,5 +623,22 @@ footer {
 
   th, td {
     padding: var(--space-xs) var(--space-sm);
+  }
+
+  .bar-details {
+    margin-left: 0;
+  }
+
+  .view-tabs {
+    flex-wrap: wrap;
+  }
+
+  .view-tab {
+    flex: 1 1 45%;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    gap: var(--space-md);
   }
 }
